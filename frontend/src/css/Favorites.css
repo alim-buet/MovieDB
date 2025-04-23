@@ -1,0 +1,92 @@
+/* Base container for the Favorites page */
+.favorites {
+  padding: 3rem 2rem;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #ffe8e6, #fff1f0); /* reddish-white */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Optional header styling */
+.favorites h1 {
+  color: #900c3f;
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+/* Empty state container */
+.favorites-empty {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  max-width: 500px;
+  margin-top: 6rem;
+  box-shadow: 0 15px 35px rgba(144, 12, 63, 0.3);
+  animation: popIn 0.7s ease-out forwards;
+  transform-origin: center;
+}
+
+/* Empty state title */
+.favorites-empty h2 {
+  color: #c70039;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* Empty state description */
+.favorites-empty p {
+  color: #333;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Movie grid for cards (if populated) */
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem;
+  animation: fadeIn 0.6s ease-in-out forwards;
+}
+
+/* Individual movie card entry */
+.movies-grid > * {
+  animation: popIn 0.5s ease-out forwards;
+}
+
+/* Fancy pop-in animation */
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05) translateY(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Basic fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
